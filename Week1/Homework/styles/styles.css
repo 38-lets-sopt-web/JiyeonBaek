@@ -1,4 +1,8 @@
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,17 +18,23 @@ header {
 }
 
 .profile-img {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
   &:hover {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
     box-shadow: var(--shadow-color) 0px 4px 8px;
   }
 }
 
 .github-icon {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+
   &:hover {
     transform: translateY(-5px);
-    transition: all 0.3s ease;
     opacity: 0.7;
   }
 }
@@ -35,10 +45,12 @@ header {
   align-items: center;
   gap: 5px;
   color: var(--text-color);
+
   h1 {
     font-size: 20px;
     font-weight: 600;
   }
+
   h2 {
     font-size: 16px;
     font-weight: 400;
