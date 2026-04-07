@@ -306,3 +306,27 @@ footer {
     transform: translateY(-8px);
   }
 }
+
+.message-box {
+  background-color: var(--white-color);
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: var(--shadow-color) 0px 4px 8px;
+}
+
+.description {
+  position: relative;
+  padding: 20px 10px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.description::before {
+  content: "🌀";
+  margin-right: 8px;
+}
+
+.description::after {
+  content: "🍒";
+  margin-left: 8px;
+}
