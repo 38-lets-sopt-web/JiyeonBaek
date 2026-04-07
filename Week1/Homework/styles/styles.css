@@ -26,8 +26,8 @@ header {
 
 .profile-img,
 .github-icon {
-  width: 5rem;
-  height: 5rem;
+  width: 50px;
+  height: 50px;
   border-radius: var(--radius-round);
 }
 
@@ -71,7 +71,7 @@ header {
 /* Main 레이아웃 스타일 */
 main {
   display: flex;
-  max-width: 130rem;
+  max-width: 1300px;
   margin: 0 auto;
   gap: var(--spacing-xl);
   padding: var(--spacing-xl) var(--spacing-lg);
@@ -296,19 +296,19 @@ footer {
   }
 }
 
-@media (max-width: 130rem) {
+@media (max-width: 1300px) {
   .card-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (max-width: 100rem) {
+@media (max-width: 1000px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 83rem) {
+@media (max-width: 830px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
