@@ -1,3 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+  padding-top: 100px;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -8,6 +17,7 @@ header {
   align-items: center;
   padding: 20px;
   background-color: var(--green100-color);
+  z-index: 1000;
 }
 
 .profile-img,
@@ -57,11 +67,78 @@ header {
   }
 }
 
+main {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 130px;
+  align-self: flex-start;
+  width: 200px;
+}
+
+.sidebar ul {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--beige-color);
+  border-radius: 15px;
+  box-shadow: var(--shadow-color) 0px 4px 8px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-radius 0.3s ease;
+  border-radius: 15px;
+
+  &:hover {
+    background-color: var(--brown-color);
+    color: var(--white-color);
+  }
+}
+
+.sidebar li:first-child a {
+  border-radius: 15px 15px 0 0;
+}
+
+.sidebar li:last-child a {
+  border-radius: 0 0 15px 15px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+section {
+  min-height: 400px;
+  scroll-margin-top: 150px;
+}
+
+section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
   padding: 40px;
