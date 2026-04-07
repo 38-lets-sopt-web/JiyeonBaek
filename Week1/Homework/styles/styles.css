@@ -223,6 +223,9 @@ footer {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 10px var(--shadow-color);
+  &:hover {
+    box-shadow: 0 8px 20px var(--shadow-color);
+  }
 }
 
 .card img {
