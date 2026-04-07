@@ -1,3 +1,4 @@
+/* Base 스타일*/
 html {
   scroll-behavior: smooth;
 }
@@ -7,6 +8,7 @@ body {
   padding-top: 100px;
 }
 
+/* Header 스타일 */
 header {
   position: fixed;
   top: 0;
@@ -64,6 +66,7 @@ header {
   }
 }
 
+/* Main 레이아웃 스타일 */
 main {
   display: flex;
   max-width: 1300px;
@@ -72,6 +75,7 @@ main {
   padding: 40px 20px;
 }
 
+/* Sidebar 스타일 */
 .sidebar {
   position: sticky;
   top: 130px;
@@ -114,6 +118,7 @@ main {
   border-radius: 0 0 15px 15px;
 }
 
+/* Content 및 각 Section 스타일 */
 .content {
   flex: 1;
   min-width: 0;
@@ -133,6 +138,12 @@ section h2 {
   color: var(--text-color);
 }
 
+.grid {
+  display: grid;
+  gap: 10px;
+}
+
+/* Footer 스타일 */
 footer {
   display: flex;
   justify-content: center;
@@ -143,11 +154,7 @@ footer {
   font-weight: 600;
 }
 
-.grid {
-  display: grid;
-  gap: 10px;
-}
-
+/* 포토덤프 섹션 스타일 */
 .photo-grid {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 200px;
@@ -186,6 +193,7 @@ footer {
   grid-area: 3 / 4 / 4 / 5;
 }
 
+/* 좋아하는 것 섹션 스타일 */
 .horizontal-scroll {
   overflow: hidden;
   width: 100%;
@@ -225,6 +233,7 @@ footer {
   }
 }
 
+/* 내 관심사 섹션 스타일 */
 .card-grid {
   grid-template-columns: repeat(5, 1fr);
 }
@@ -309,6 +318,7 @@ footer {
   }
 }
 
+/* To. 웹왔니 섹션 스타일 */
 .message-box {
   background-color: var(--white-color);
   padding: 10px 15px;
