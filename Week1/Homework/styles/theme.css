@@ -1,15 +1,19 @@
 :root {
   --white-color: #ffffff;
+  --background-color: #fefae0;
+  --text-color: #4e3333e1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
   --green100-color: #ccd5ae;
   --green200-color: #e9edc9;
+
   --beige-color: #faedcd;
   --brown-color: #d4a373;
-  --background-color: #fefae0;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --text-color: #4e3333e1;
+
   --blue100-color: #bcd9ee;
   --blue200-color: #8ec5e8;
   --blue300-color: #2c5c7c;
+
   --red100-color: #f3b2b2;
   --red200-color: #e88989;
   --red300-color: #8a3b3b;
