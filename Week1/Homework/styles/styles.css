@@ -93,7 +93,6 @@ main {
   background-color: var(--beige-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-color) 0 4px 8px;
-  overflow: hidden;
 }
 
 .nav-link {
