@@ -100,6 +100,7 @@
 /* 모달 내부 폼 */
 #add-expense-form {
   display: flex;
+  flex-direction: column;
   gap: 1.6rem;
   padding: 2.4rem;
 }
