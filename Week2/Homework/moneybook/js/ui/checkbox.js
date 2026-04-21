@@ -1,4 +1,4 @@
-import { readStorage, writeStorage } from "./storage.js";
+import { readStorage, writeStorage } from "../core/storage.js";
 
 export const initCheckbox = (lists, deleteSelectedBtn, onDataChanged) => {
   if (!lists || !deleteSelectedBtn) return;

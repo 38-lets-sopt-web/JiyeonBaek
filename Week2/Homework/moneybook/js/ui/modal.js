@@ -1,11 +1,7 @@
-import { readStorage, writeStorage, generateId } from "./storage.js";
+import { readStorage, writeStorage, generateId } from "../core/storage.js";
+import { formatAmount } from "../utils/utils.js";
 
-export const initModal = (
-  addModal,
-  addExpenseBtn,
-  closeAddModalBtn,
-  addExpenseForm,
-) => {
+export const initModal = (addModal, addExpenseBtn, closeAddModalBtn, addExpenseForm) => {
   if (addExpenseBtn && addModal) {
     addExpenseBtn.addEventListener("click", () => {
       addModal.style.display = "block";
@@ -105,12 +101,10 @@ export const initDetailModal = (lists, detailModal, detailContent) => {
       e.preventDefault();
 
       const expenseId = Number(trigger.getAttribute("data-id"));
-      const target = readStorage().find(
-        (expense) => Number(expense.id) === expenseId,
-      );
+      const target = readStorage().find((expense) => Number(expense.id) === expenseId);
       if (!target) return;
 
-      const amountText = `${target.amount > 0 ? "+" : ""}${target.amount.toLocaleString()}원`;
+      const amountText = `${formatAmount(target.amount)}원`;
       detailContent.innerHTML = `
         <div class="detail-row">
           <span class="detail-label">제목:</span>

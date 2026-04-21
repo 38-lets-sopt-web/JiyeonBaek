@@ -1,3 +1,5 @@
+import { formatAmount } from "../utils/utils.js";
+
 export const renderExpenses = (list, container) => {
   if (!container) return;
 
@@ -28,7 +30,7 @@ export const renderExpenses = (list, container) => {
         <tr data-id="${expense.id}">
           <td><input type="checkbox" class="row-check" data-id="${expense.id}" aria-label="${expense.title} 선택" /></td>
           <td><button type="button" class="expense-title" data-id="${expense.id}">${expense.title}</button></td>
-          <td class="${expense.amount < 0 ? "expense-negative" : "expense-positive"}">${expense.amount > 0 ? "+" : ""}${expense.amount.toLocaleString()}</td>
+          <td class="${expense.amount < 0 ? "expense-negative" : "expense-positive"}">${formatAmount(expense.amount)}</td>
           <td>${expense.date}</td>
           <td>${expense.category}</td>
           <td>${expense.payment}</td>
@@ -42,7 +44,7 @@ export const renderExpenses = (list, container) => {
     <tfoot>
       <tr class="total-row">
         <td colspan="3"><strong>TOTAL</strong></td>
-        <td colspan="3" class="${totalAmount < 0 ? "expense-negative" : "expense-positive"}"><strong>${totalAmount > 0 ? "+" : ""}${totalAmount.toLocaleString()}</strong></td>
+        <td colspan="3" class="${totalAmount < 0 ? "expense-negative" : "expense-positive"}"><strong>${formatAmount(totalAmount)}</strong></td>
       </tr>
     </tfoot>`;
 

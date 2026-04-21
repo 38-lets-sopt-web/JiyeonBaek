@@ -1,4 +1,4 @@
-import { expenses } from "../data/expense.js";
+import { expenses } from "../../data/expense.js";
 
 const STORAGE_KEY = "expenseData";
 
@@ -40,7 +40,7 @@ export const generateId = () => {
   if (all.length === 0) {
     return 1;
   }
-  const maxId = all.reduce((max, e) => Math.max(max, Number(e.id) || 0), 0);
+  const maxId = Math.max(...all.map(e => Number(e.id) || 0), 0);
   lastGeneratedId = maxId + 1;
   return lastGeneratedId;
 };

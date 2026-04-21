@@ -1,8 +1,8 @@
-import { readStorage } from "./storage.js";
-import { renderExpenses } from "./render.js";
-import { getFilteredExpenses, sortExpensesByDate } from "./filter.js";
-import { initModal, initAddExpense, initDetailModal } from "./modal.js";
-import { initCheckbox } from "./checkbox.js";
+import { readStorage } from "./core/storage.js";
+import { renderExpenses } from "./ui/render.js";
+import { getFilteredExpenses, sortExpensesByDate } from "./utils/filter.js";
+import { initModal, initAddExpense, initDetailModal } from "./ui/modal.js";
+import { initCheckbox } from "./ui/checkbox.js";
 
 const form = document.getElementById("search-filter-form");
 const lists = document.getElementById("lists");
