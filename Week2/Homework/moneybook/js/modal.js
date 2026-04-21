@@ -1,6 +1,11 @@
 import { readStorage, writeStorage, generateId } from "./storage.js";
 
-export const initModal = (addModal, addExpenseBtn, closeAddModalBtn, addExpenseForm) => {
+export const initModal = (
+  addModal,
+  addExpenseBtn,
+  closeAddModalBtn,
+  addExpenseForm,
+) => {
   if (addExpenseBtn && addModal) {
     addExpenseBtn.addEventListener("click", () => {
       addModal.style.display = "block";
@@ -32,7 +37,10 @@ export const initModal = (addModal, addExpenseBtn, closeAddModalBtn, addExpenseF
       }
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && addModal.getAttribute("aria-hidden") === "false") {
+      if (
+        e.key === "Escape" &&
+        addModal.getAttribute("aria-hidden") === "false"
+      ) {
         closeModal();
       }
     });
@@ -45,7 +53,9 @@ export const initAddExpense = (addExpenseForm, addModal, onDataChanged) => {
   addExpenseForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const inputs = addExpenseForm.querySelectorAll("input[required], select[required]");
+    const inputs = addExpenseForm.querySelectorAll(
+      "input[required], select[required]",
+    );
     const isEmpty = Array.from(inputs).some((input) => {
       if (input.type === "number") {
         return !input.value;
@@ -54,15 +64,16 @@ export const initAddExpense = (addExpenseForm, addModal, onDataChanged) => {
     });
 
     if (isEmpty) {
-      alert("👽: 모든 항목을 입력해주세요");
+      alert("모든 항목을 입력해주세요");
       return;
     }
 
     const fd = new FormData(addExpenseForm);
     const type = fd.get("type") || "";
     const rawAmount = Number(fd.get("amount")) || 0;
-    const normalizedAmount = type === "expense" ? -Math.abs(rawAmount) : Math.abs(rawAmount);
-    
+    const normalizedAmount =
+      type === "expense" ? -Math.abs(rawAmount) : Math.abs(rawAmount);
+
     const newExpense = {
       id: generateId(),
       title: fd.get("title")?.trim() || "",
@@ -94,7 +105,9 @@ export const initDetailModal = (lists, detailModal, detailContent) => {
       e.preventDefault();
 
       const expenseId = Number(trigger.getAttribute("data-id"));
-      const target = readStorage().find((expense) => Number(expense.id) === expenseId);
+      const target = readStorage().find(
+        (expense) => Number(expense.id) === expenseId,
+      );
       if (!target) return;
 
       const amountText = `${target.amount > 0 ? "+" : ""}${target.amount.toLocaleString()}원`;
