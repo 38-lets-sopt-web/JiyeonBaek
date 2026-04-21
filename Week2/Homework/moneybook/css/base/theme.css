@@ -13,15 +13,15 @@
   --backdrop-color: rgba(0, 0, 0, 0.5);
 
   /* font-size */
-  --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
+  --font-size-sm: 1.4rem;
+  --font-size-md: 1.6rem;
+  --font-size-xl: 2.0rem;
+  --font-size-2xl: 2.4rem;
 
   /* border-radius */
-  --border-radius-md: 10px;
-  --border-radius-lg: 12px;
-  --border-radius-xl: 14px;
+  --border-radius-md: 1.0rem;
+  --border-radius-lg: 1.2rem;
+  --border-radius-xl: 1.4rem;
 
   /* box-shadow */
   --box-shadow-sm: 0 8px 16px rgba(0, 0, 0, 0.1);

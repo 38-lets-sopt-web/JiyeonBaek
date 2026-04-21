@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 html,
 body {
   width: 100%;
@@ -13,18 +17,18 @@ body {
   background-color: var(--background-color);
   line-height: 1.6;
   letter-spacing: -0.3px;
-  padding: 0 20px;
+  padding: 0 2rem;
   scrollbar-gutter: stable;
 }
 
 body {
   max-width: 1200px;
-  margin: 100px auto 0;
+  margin: 10rem auto 0;
   overflow-y: scroll;
 }
 
 main {
-  padding-bottom: 40px;
+  padding-bottom: 4rem;
 }
 
 a {
@@ -70,7 +74,7 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -97,6 +101,6 @@ button {
 
 @media (max-width: 860px) {
   body {
-    margin: 180px auto 0;
+    margin: 18rem auto 0;
   }
 }

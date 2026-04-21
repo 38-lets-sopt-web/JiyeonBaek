@@ -32,7 +32,7 @@
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: var(--border-radius-xl);
-  min-width: 500px;
+  min-width: 50rem;
   overflow-y: auto;
 }
 
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px 10px;
+  padding: 2rem 3rem 1rem;
 }
 
 .modal-header h3 {
@@ -50,7 +50,7 @@
 }
 
 .detail-content {
-  padding: 8px 44px 30px;
+  padding: 0.8rem 4.4rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -59,11 +59,11 @@
 
 #detail-modal .modal-content {
   background-color: #f3f3f3;
-  width: min(92vw, 400px);
+  width: min(92vw, 40rem);
 }
 
 #detail-modal .modal-header {
-  padding: 28px 44px 18px;
+  padding: 2.8rem 4.4rem 1.8rem;
 }
 
 #detail-modal .modal-header h3 {
@@ -80,10 +80,10 @@
 
 #detail-modal .detail-row {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 16rem 1fr;
   align-items: center;
-  padding: 13px 0;
-  border-bottom: 1px solid #e2e3e8;
+  padding: 1.3rem 0;
+  border-bottom: 0.1rem solid #e2e3e8;
 }
 
 #detail-modal .detail-label {
@@ -100,14 +100,13 @@
 /* 모달 내부 폼 */
 #add-expense-form {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px;
+  gap: 1.6rem;
+  padding: 2.4rem;
 }
 
 #add-expense-form .filter-grid-row {
   display: grid;
-  gap: 16px;
+  gap: 1.6rem;
 }
 
 #add-expense-form .filter-grid-row.single {
@@ -121,7 +120,7 @@
 #add-expense-form .filter-field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 #add-expense-form .filter-field > label {

@@ -1,12 +1,12 @@
 #search-filter-form .filter-actions {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 1rem;
 }
 
 #search-filter-form button {
   width: 100%;
-  padding: 14px 12px;
+  padding: 1.4rem 1.2rem;
   font-size: var(--font-size-md);
   font-weight: 500;
   color: var(--text-color);
@@ -24,7 +24,7 @@
 .modal-header button {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: var(--text-color);
 }
 
@@ -34,13 +34,13 @@
 
 #add-expense-form .filter-actions {
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 0.8rem;
 }
 
 #add-expense-form .filter-actions button {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   border-radius: var(--border-radius-lg);
   font-size: var(--font-size-md);
   transition: var(--transition-sm);
