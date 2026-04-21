@@ -1,0 +1,67 @@
+#search-filter-form .filter-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#search-filter-form button {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-lg);
+}
+
+#search-filter-form button:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  transition: var(--transition-sm);
+}
+
+/* 모달 버튼 */
+.modal-header button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.modal-header button:hover {
+  color: var(--gray-color);
+}
+
+#add-expense-form .filter-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+#add-expense-form .filter-actions button {
+  padding: 10px 20px;
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-md);
+  transition: var(--transition-sm);
+}
+
+#add-expense-form .filter-actions button[type="submit"] {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#add-expense-form .filter-actions button[type="submit"]:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+#add-expense-form .filter-actions button[type="button"] {
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  border: none;
+}
+
+#add-expense-form .filter-actions button[type="button"]:hover {
+  background-color: var(--gray-color);
+}
