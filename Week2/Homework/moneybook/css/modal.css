@@ -1,0 +1,138 @@
+#add-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+#detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-color);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: var(--border-radius-xl);
+  min-width: 500px;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px 10px;
+}
+
+.modal-header h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.detail-content {
+  padding: 8px 44px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-size: var(--font-size-md);
+}
+
+#detail-modal .modal-content {
+  background-color: #f3f3f3;
+  width: min(92vw, 400px);
+}
+
+#detail-modal .modal-header {
+  padding: 28px 44px 18px;
+}
+
+#detail-modal .modal-header h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+#detail-modal .modal-header button {
+  font-size: var(--font-size-2xl);
+  color: var(--text-color);
+  line-height: 1;
+}
+
+#detail-modal .detail-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid #e2e3e8;
+}
+
+#detail-modal .detail-label {
+  color: var(--gray-color);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+
+#detail-modal .detail-value {
+  color: var(--text-color);
+  font-size: var(--font-size-md);
+}
+
+/* 모달 내부 폼 */
+#add-expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+#add-expense-form .filter-grid-row {
+  display: grid;
+  gap: 16px;
+}
+
+#add-expense-form .filter-grid-row.single {
+  grid-template-columns: 1fr;
+}
+
+#add-expense-form .filter-grid-row.double {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#add-expense-form .filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#add-expense-form .filter-field > label {
+  font-size: var(--font-size-sm);
+}
+
+#add-expense-form input,
+#add-expense-form select {
+  font-size: var(--font-size-sm);
+}
+
+#add-expense-form button {
+  font-size: var(--font-size-sm);
+}
