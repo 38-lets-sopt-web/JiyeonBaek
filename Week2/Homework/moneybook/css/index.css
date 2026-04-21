@@ -1,8 +1,10 @@
-@import "./theme.css";
-@import "./header.css";
-@import "./base.css";
-@import "./input.css";
-@import "./search-filter.css";
-@import "./lists.css";
-@import "./button.css";
-@import "./modal.css";
+@import url("./base/base.css");
+@import url("./base/theme.css");
+
+@import url("./layout/header.css");
+
+@import url("./components/button.css");
+@import url("./components/input.css");
+@import url("./components/search-filter.css");
+@import url("./components/lists.css");
+@import url("./components/modal.css");
