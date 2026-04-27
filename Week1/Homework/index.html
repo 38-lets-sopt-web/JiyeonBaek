@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[1주차] HTML, CSS 연습</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
+    <link rel="stylesheet" href="./styles/theme.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <img
+        src="./assets/images/profile.webp"
+        alt="profile-image"
+        class="profile-img"
+      />
+      <hgroup class="profile-text">
+        <h1>백젼의 블로그</h1>
+        <h2>환영합니다!</h2>
+      </hgroup>
+      <a
+        href="https://github.com/jyeon03"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="깃허브 프로필로 이동"
+      >
+        <img
+          src="./assets/icons/github.svg"
+          alt="github icon"
+          class="github-icon"
+        />
+      </a>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- Sidebar -->
+      <nav class="sidebar" aria-label="사이드 네비게이션">
+        <ul class="nav-box">
+          <li><a href="#photo-dump" class="nav-link">포토덤프</a></li>
+          <li><a href="#favorite" class="nav-link">좋아하는 것</a></li>
+          <li><a href="#interests" class="nav-link">내 관심사</a></li>
+          <li><a href="#to-web" class="nav-link">To. 웹왔니</a></li>
+        </ul>
+      </nav>
+
+      <!-- Content -->
+      <div class="content">
+        <!-- 포토덤프 섹션-->
+        <section id="photo-dump">
+          <h2>🎞️ 포토덤프</h2>
+          <div class="grid photo-grid">
+            <div class="item">
+              <img
+                src="./assets/images/photo-dump/baby.webp"
+                alt="어렸을 적 사진"
+              />
+            </div>
+            <div class="item">
+              <img src="./assets/images/photo-dump/me.webp" alt="내 사진" />
+            </div>
+            <div class="item">
+              <img src="./assets/images/photo-dump/me2.webp" alt="내 사진2" />
+            </div>
+            <div class="item">
+              <img
+                src="./assets/images/photo-dump/clustar.webp"
+                alt="데모데이 사진"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="./assets/images/photo-dump/mountain.webp"
+                alt="관악산 등산 사진"
+              />
+            </div>
+            <div class="item">
+              <img
+                src="./assets/images/photo-dump/shamrock.webp"
+                alt="솝커톤 사진"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 좋아하는 것 섹션 -->
+        <section id="favorite">
+          <h2>🐈‍⬛ 좋아하는 것: 하루태루</h2>
+          <div class="horizontal-scroll">
+            <div class="scroll-track">
+              <img
+                src="./assets/images/photo-library/cat.webp"
+                alt="하루태루 사진1"
+              />
+              <img
+                src="./assets/images/photo-library/cat2.webp"
+                alt="하루태루 사진2"
+              />
+              <img
+                src="./assets/images/photo-library/cat3.webp"
+                alt="하루태루 사진3"
+              />
+              <img
+                src="./assets/images/photo-library/cat4.webp"
+                alt="하루태루 사진4"
+              />
+              <img
+                src="./assets/images/photo-library/cat5.webp"
+                alt="하루태루 사진5"
+              />
+              <img
+                src="./assets/images/photo-library/cat.webp"
+                alt="하루태루 사진1"
+                aria-hidden="true"
+              />
+              <img
+                src="./assets/images/photo-library/cat2.webp"
+                alt="하루태루 사진2"
+                aria-hidden="true"
+              />
+              <img
+                src="./assets/images/photo-library/cat3.webp"
+                alt="하루태루 사진3"
+                aria-hidden="true"
+              />
+              <img
+                src="./assets/images/photo-library/cat4.webp"
+                alt="하루태루 사진4"
+                aria-hidden="true"
+              />
+              <img
+                src="./assets/images/photo-library/cat5.webp"
+                alt="하루태루 사진5"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 내 관심사 섹션 -->
+        <section id="interests">
+          <h2>👀 내 관심사</h2>
+          <ul class="grid card-grid">
+            <li class="card">
+              <img src="./assets/images/interest/hantaesan.webp" alt="한태산" />
+              <div class="card-body">
+                <p>🐈‍⬛ 한태산</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./assets/images/interest/hahyunsang.webp"
+                alt="하현상"
+              />
+              <div class="card-body">
+                <p>🐾 하현상</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./assets/images/interest/doosan.webp" alt="두산" />
+              <div class="card-body">
+                <p>⚾️ 두산</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./assets/images/interest/kiyu.webp" alt="기유" />
+              <div class="card-body">
+                <p>⚔️ 기유</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./assets/images/interest/ssok.webp" alt="쑥라떼" />
+              <div class="card-body">
+                <p>🍵 쑥라떼</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <img src="./assets/images/interest/sleep.webp" alt="낮잠" />
+              <div class="card-body">
+                <p>💤 낮잠</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./assets/images/interest/doojjonkoo.webp"
+                alt="두쫀쿠"
+              />
+              <div class="card-body">
+                <p>🤤 두쫀쿠</p>
+                <div class="btn-group">
+                  <button type="button" class="btn like">좋아요</button>
+                  <button type="button" class="btn hate">싫어요</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- To. 웹왔니 섹션 -->
+        <section id="to-web">
+          <h2>🍀 To. 웹왔니</h2>
+          <div class="message-box">
+            <p class="description">안녕!</p>
+            <p class="description">서진, 우찬 오빠</p>
+            <p class="description">금잔디조 화이팅</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>👀 END 👀</p>
+    </footer>
+  </body>
+</html>
