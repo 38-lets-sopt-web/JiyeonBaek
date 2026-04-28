@@ -1,13 +1,13 @@
 import { readStorage, writeStorage, generateId } from "../core/storage.js";
 import { formatAmount } from "../utils/utils.js";
 
-export const initModal = (addModal, addExpenseBtn, closeAddModalBtn, addExpenseForm) => {
-  if (addExpenseBtn && addModal) {
-    addExpenseBtn.addEventListener("click", () => {
-      addModal.style.display = "block";
-      addModal.setAttribute("aria-hidden", "false");
+export const initModal = (modalElement, openBtn, closeBtn, formElement) => {
+  if (openBtn && modalElement) {
+    openBtn.addEventListener("click", () => {
+      modalElement.style.display = "block";
+      modalElement.setAttribute("aria-hidden", "false");
 
-      const firstInput = addModal.querySelector("input");
+      const firstInput = modalElement.querySelector("input");
       if (firstInput) {
         setTimeout(() => firstInput.focus(), 0);
       }
@@ -15,19 +15,19 @@ export const initModal = (addModal, addExpenseBtn, closeAddModalBtn, addExpenseF
   }
 
   const closeModal = () => {
-    if (addModal) {
-      addModal.style.display = "none";
-      addModal.setAttribute("aria-hidden", "true");
-      if (addExpenseForm) addExpenseForm.reset();
+    if (modalElement) {
+      modalElement.style.display = "none";
+      modalElement.setAttribute("aria-hidden", "true");
+      if (formElement) formElement.reset();
     }
   };
 
-  if (closeAddModalBtn) {
-    closeAddModalBtn.addEventListener("click", closeModal);
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
   }
 
-  if (addModal) {
-    addModal.addEventListener("click", (e) => {
+  if (modalElement) {
+    modalElement.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-backdrop")) {
         closeModal();
       }
@@ -35,7 +35,7 @@ export const initModal = (addModal, addExpenseBtn, closeAddModalBtn, addExpenseF
     document.addEventListener("keydown", (e) => {
       if (
         e.key === "Escape" &&
-        addModal.getAttribute("aria-hidden") === "false"
+        modalElement.getAttribute("aria-hidden") === "false"
       ) {
         closeModal();
       }
