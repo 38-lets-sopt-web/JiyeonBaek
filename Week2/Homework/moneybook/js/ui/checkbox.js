@@ -38,13 +38,15 @@ export const initCheckbox = (lists, deleteSelectedBtn, onDataChanged) => {
         return;
       }
 
-      const selectedIds = Array.from(checkedBoxes).map((cb) =>
-        Number(cb.getAttribute("data-id")),
+      const selectedIdsSet = new Set(
+        Array.from(checkedBoxes).map((cb) =>
+          Number(cb.getAttribute("data-id")),
+        ),
       );
 
       const allExpenses = readStorage();
       const remainingExpenses = allExpenses.filter(
-        (e) => !selectedIds.includes(Number(e.id)),
+        (e) => !selectedIdsSet.has(Number(e.id)),
       );
 
       writeStorage(remainingExpenses);
