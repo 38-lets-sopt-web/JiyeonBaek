@@ -1,11 +1,23 @@
 import { readStorage, writeStorage, generateId } from "../core/storage.js";
 import { formatAmount } from "../utils/utils.js";
 
+export const openModal = (modalElement) => {
+  if (!modalElement) return;
+  modalElement.style.display = "block";
+  modalElement.setAttribute("aria-hidden", "false");
+};
+
+export const closeModal = (modalElement, formElement = null) => {
+  if (!modalElement) return;
+  modalElement.style.display = "none";
+  modalElement.setAttribute("aria-hidden", "true");
+  if (formElement) formElement.reset();
+};
+
 export const initModal = (modalElement, openBtn, closeBtn, formElement) => {
   if (openBtn && modalElement) {
     openBtn.addEventListener("click", () => {
-      modalElement.style.display = "block";
-      modalElement.setAttribute("aria-hidden", "false");
+      openModal(modalElement);
 
       const firstInput = modalElement.querySelector("input");
       if (firstInput) {
@@ -14,22 +26,16 @@ export const initModal = (modalElement, openBtn, closeBtn, formElement) => {
     });
   }
 
-  const closeModal = () => {
-    if (modalElement) {
-      modalElement.style.display = "none";
-      modalElement.setAttribute("aria-hidden", "true");
-      if (formElement) formElement.reset();
-    }
-  };
+  const handleClose = () => closeModal(modalElement, formElement);
 
   if (closeBtn) {
-    closeBtn.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", handleClose);
   }
 
   if (modalElement) {
     modalElement.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-backdrop")) {
-        closeModal();
+        handleClose();
       }
     });
     document.addEventListener("keydown", (e) => {
@@ -37,7 +43,7 @@ export const initModal = (modalElement, openBtn, closeBtn, formElement) => {
         e.key === "Escape" &&
         modalElement.getAttribute("aria-hidden") === "false"
       ) {
-        closeModal();
+        handleClose();
       }
     });
   }
@@ -45,6 +51,16 @@ export const initModal = (modalElement, openBtn, closeBtn, formElement) => {
 
 export const initAddExpense = (addExpenseForm, addModal, onDataChanged) => {
   if (!addExpenseForm) return;
+
+  const amountInput = addExpenseForm.querySelector("#add-amount");
+  if (amountInput) {
+    amountInput.addEventListener("input", (e) => {
+      // 입력값이 음수이거나 마이너스 기호가 포함되면 강제로 양수로 변환
+      if (e.target.value.includes("-")) {
+        e.target.value = Math.abs(e.target.value) || "";
+      }
+    });
+  }
 
   addExpenseForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -67,6 +83,12 @@ export const initAddExpense = (addExpenseForm, addModal, onDataChanged) => {
     const fd = new FormData(addExpenseForm);
     const type = fd.get("type") || "";
     const rawAmount = Number(fd.get("amount")) || 0;
+    
+    if (rawAmount < 0) {
+      alert("금액은 음수일 수 없습니다.");
+      return;
+    }
+
     const normalizedAmount =
       type === "expense" ? -Math.abs(rawAmount) : Math.abs(rawAmount);
 
@@ -83,9 +105,7 @@ export const initAddExpense = (addExpenseForm, addModal, onDataChanged) => {
     all.push(newExpense);
     writeStorage(all);
 
-    addExpenseForm.reset();
-    addModal.style.display = "none";
-    addModal.setAttribute("aria-hidden", "true");
+    closeModal(addModal, addExpenseForm);
 
     if (typeof onDataChanged === "function") {
       onDataChanged();
@@ -133,8 +153,7 @@ export const initDetailModal = (lists, detailModal, detailContent) => {
         detailContent.appendChild(row);
       });
 
-      detailModal.style.display = "block";
-      detailModal.setAttribute("aria-hidden", "false");
+      openModal(detailModal);
     });
   }
 };
