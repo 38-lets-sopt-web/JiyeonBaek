@@ -105,28 +105,33 @@ export const initDetailModal = (lists, detailModal, detailContent) => {
       if (!target) return;
 
       const amountText = `${formatAmount(target.amount)}원`;
-      detailContent.innerHTML = `
-        <div class="detail-row">
-          <span class="detail-label">제목:</span>
-          <span class="detail-value">${target.title}</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">금액:</span>
-          <span class="detail-value">${amountText}</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">날짜:</span>
-          <span class="detail-value">${target.date}</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">카테고리:</span>
-          <span class="detail-value">${target.category}</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-label">결제수단:</span>
-          <span class="detail-value">${target.payment}</span>
-        </div>
-      `;
+      
+      detailContent.innerHTML = "";
+
+      const details = [
+        { label: "제목", value: target.title },
+        { label: "금액", value: amountText },
+        { label: "날짜", value: target.date },
+        { label: "카테고리", value: target.category },
+        { label: "결제수단", value: target.payment },
+      ];
+
+      details.forEach((item) => {
+        const row = document.createElement("div");
+        row.className = "detail-row";
+
+        const labelSpan = document.createElement("span");
+        labelSpan.className = "detail-label";
+        labelSpan.textContent = `${item.label}:`;
+
+        const valueSpan = document.createElement("span");
+        valueSpan.className = "detail-value";
+        valueSpan.textContent = item.value;
+
+        row.appendChild(labelSpan);
+        row.appendChild(valueSpan);
+        detailContent.appendChild(row);
+      });
 
       detailModal.style.display = "block";
       detailModal.setAttribute("aria-hidden", "false");
