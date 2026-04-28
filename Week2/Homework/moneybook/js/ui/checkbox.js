@@ -10,7 +10,7 @@ export const initCheckbox = (lists, deleteSelectedBtn, onDataChanged) => {
 
     if (!masterCheck) return;
 
-    if (checkedChecks.length === allChecks.length) {
+    if (allChecks.length > 0 && checkedChecks.length === allChecks.length) {
       masterCheck.checked = true;
       masterCheck.indeterminate = false;
     } else if (
