@@ -28,18 +28,16 @@ if (logoRefreshBtn) {
 /* 현재 필터 + 정렬 상태로 목록 갱신 */
 const renderByCurrentControls = () => {
   const allExpenses = readStorage();
+  let expensesToRender = allExpenses;
 
-  if (!form) {
-    const sortValue = sortDateSelect?.value || "desc";
-    const sortedOnly = sortExpensesByDate(allExpenses, sortValue);
-    renderExpenses(sortedOnly, lists);
-    return;
+  if (form) {
+    const formData = new FormData(form);
+    expensesToRender = getFilteredExpenses(formData, allExpenses);
   }
 
-  const formData = new FormData(form);
-  const filtered = getFilteredExpenses(formData, allExpenses);
   const sortValue = sortDateSelect?.value || "desc";
-  const sorted = sortExpensesByDate(filtered, sortValue);
+  const sorted = sortExpensesByDate(expensesToRender, sortValue);
+  
   renderExpenses(sorted, lists);
 };
 
