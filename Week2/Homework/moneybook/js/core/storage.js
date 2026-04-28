@@ -34,13 +34,11 @@ export const writeStorage = (list) => {
 };
 
 /* 새 ID 생성 */
-let lastGeneratedId = 0;
 export const generateId = () => {
   const all = readStorage();
   if (all.length === 0) {
     return 1;
   }
   const maxId = Math.max(...all.map(e => Number(e.id) || 0), 0);
-  lastGeneratedId = maxId + 1;
-  return lastGeneratedId;
+  return maxId + 1;
 };
