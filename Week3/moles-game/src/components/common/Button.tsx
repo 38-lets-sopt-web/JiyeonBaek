@@ -3,14 +3,15 @@ interface ButtonProps {
   children: React.ReactNode;
   bgColor: string;
   textColor: string;
+  className?: string;
 }
 
-const Button = ({ onClick, children, bgColor, textColor }: ButtonProps) => {
+const Button = ({ onClick, children, bgColor, textColor, className }: ButtonProps) => {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full px-5 py-2 text-lg transition ${bgColor} ${textColor}`}
+      className={`rounded-full px-5 py-2 text-lg transition ${bgColor} ${textColor} ${className}`}
     >
       {children}
     </button>

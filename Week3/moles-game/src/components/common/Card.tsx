@@ -22,6 +22,7 @@ const Card = ({
     <article
       className={cn(
         'bg-primary100',
+        'px-5',
         'flex h-48 flex-col items-center justify-center',
         'rounded-2xl',
         className,

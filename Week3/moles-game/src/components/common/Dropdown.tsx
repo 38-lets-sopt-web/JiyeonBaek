@@ -9,12 +9,14 @@ interface DropdownProps {
   value: string;
   options: readonly DropdownOption[];
   onChange: (value: string) => void;
+  disabled?: boolean;
 }
 
-const Dropdown = ({ value, options, onChange }: DropdownProps) => {
+const Dropdown = ({ value, options, onChange, disabled = false }: DropdownProps) => {
   return (
     <select
       value={value}
+      disabled={disabled}
       onChange={(e) => onChange(e.target.value)}
       className={cn('text-text bg-white', 'rounded-md px-5 py-4', 'text-2xl font-bold')}
     >
