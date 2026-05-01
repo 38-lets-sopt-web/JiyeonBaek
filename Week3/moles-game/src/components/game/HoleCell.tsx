@@ -19,7 +19,7 @@ const HoleCell = ({ index, holeType, holeSize, onClick }: HoleCellProps) => {
           alt="두더지"
           className={cn(
             'h-full w-full object-cover',
-            holeType === 'mole-hit' && 'scale-90 rounded-full ring-4 ring-red-400',
+            holeType === 'mole-hit' && 'scale-95 rounded-full ring-4 ring-green-400',
           )}
         />
       );
