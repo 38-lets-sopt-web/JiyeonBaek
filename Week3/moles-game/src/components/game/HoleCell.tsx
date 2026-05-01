@@ -36,7 +36,11 @@ const HoleCell = ({ index, holeType, holeSize, onClick }: HoleCellProps) => {
     <button
       type="button"
       onClick={() => onClick(index)}
-      className={cn('bg-primary200 flex items-center justify-center overflow-hidden', holeSize, 'rounded-full')}
+      className={cn(
+        'bg-primary200 flex items-center justify-center overflow-hidden',
+        holeSize,
+        'rounded-full',
+      )}
       aria-label={`${index + 1}번 구멍`}
     >
       {renderInner()}
