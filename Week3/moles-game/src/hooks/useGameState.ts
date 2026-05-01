@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { GAME_MESSAGES } from '@/constants/game';
 
 const useGameState = () => {
@@ -9,45 +9,45 @@ const useGameState = () => {
   const [message, setMessage] = useState<string>(GAME_MESSAGES.READY);
   const [showResultModal, setShowResultModal] = useState(false);
 
-  const resetGameState = useCallback(() => {
+  const resetGameState = () => {
     setIsRunning(false);
     setScore(0);
     setSuccessCount(0);
     setFailCount(0);
     setMessage(GAME_MESSAGES.READY);
     setShowResultModal(false);
-  }, []);
+  };
 
-  const finishGameState = useCallback(() => {
+  const finishGameState = () => {
     setIsRunning(false);
     setMessage(GAME_MESSAGES.END);
     setShowResultModal(true);
-  }, []);
+  };
 
-  const startGameState = useCallback(() => {
+  const startGameState = () => {
     setScore(0);
     setSuccessCount(0);
     setFailCount(0);
     setMessage(GAME_MESSAGES.START);
     setShowResultModal(false);
     setIsRunning(true);
-  }, []);
+  };
 
-  const handleSuccess = useCallback(() => {
+  const handleSuccess = () => {
     setScore((prev) => prev + 1);
     setSuccessCount((prev) => prev + 1);
     setMessage(GAME_MESSAGES.SUCCESS_MOLE);
-  }, []);
+  };
 
-  const handleFail = useCallback(() => {
+  const handleFail = () => {
     setScore((prev) => prev - 1);
     setFailCount((prev) => prev + 1);
     setMessage(GAME_MESSAGES.FAIL_BOMB);
-  }, []);
+  };
 
-  const clearMessage = useCallback(() => {
+  const clearMessage = () => {
     setMessage('\u00A0');
-  }, []);
+  };
 
   return {
     isRunning,
