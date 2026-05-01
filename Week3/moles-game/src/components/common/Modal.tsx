@@ -2,30 +2,29 @@ import { createPortal } from 'react-dom';
 import Button from './Button';
 
 interface ModalProps {
-  title: string;
-  description: string;
-  buttonText: string;
+  levelLabel: string;
+  score: number;
   onClose: () => void;
 }
 
-const Modal = ({ title, description, buttonText, onClose }: ModalProps) => {
+const Modal = ({ levelLabel, score, onClose }: ModalProps) => {
   if (typeof document === 'undefined') {
     return null;
   }
 
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-      <div className="w-100 rounded-md bg-white px-8 py-6 text-center shadow-lg">
-        <h2 className="text-text text-3xl font-bold">{title}</h2>
-        <p className="mt-3 text-xl text-gray-700">{description}</p>
-        <div className="mt-6 flex justify-center">
+      <div className="w-90 rounded-2xl bg-white p-8 text-center shadow-lg">
+        <h2 className="text-4 text-text font-bold">{levelLabel} 게임 종료!</h2>
+        <p className="text-primary200 mt-4 text-4xl font-bold">최종 점수: {score}점</p>
+        <div className="mt-5 flex justify-center">
           <Button
             onClick={onClose}
             bgColor="bg-primary200"
             textColor="text-white"
             className="w-full rounded-sm"
           >
-            {buttonText}
+            확인
           </Button>
         </div>
       </div>
