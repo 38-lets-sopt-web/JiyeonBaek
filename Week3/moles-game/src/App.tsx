@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import AppHeader from './components/layout/AppHeader';
 import type { GameMode } from './types/app';
-import GamePage from './pages/GamePage/GamePage';
-import RankingPage from './pages/RankingPage/RankingPage';
+import GamePage from './pages/GamePage';
+import RankingPage from './pages/RankingPage';
 import useRanking from './hooks/useRanking';
 
 function App() {
