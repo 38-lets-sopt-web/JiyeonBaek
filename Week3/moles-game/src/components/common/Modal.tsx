@@ -15,7 +15,7 @@ const Modal = ({ levelLabel, score, onClose }: ModalProps) => {
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
       <div className="w-90 rounded-2xl bg-white p-8 text-center shadow-lg">
-        <h2 className="text-4 text-text font-bold">{levelLabel} 게임 종료!</h2>
+        <h2 className="text-4 font-bold">{levelLabel} 게임 종료!</h2>
         <p className="text-primary200 mt-4 text-4xl font-bold">최종 점수: {score}점</p>
         <div className="mt-5 flex justify-center">
           <Button

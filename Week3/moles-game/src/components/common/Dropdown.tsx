@@ -18,7 +18,7 @@ const Dropdown = ({ value, options, onChange, disabled = false }: DropdownProps)
       value={value}
       disabled={disabled}
       onChange={(e) => onChange(e.target.value)}
-      className={cn('text-text bg-white', 'rounded-md px-5 py-4', 'text-2xl font-bold')}
+      className={cn('bg-white', 'rounded-md px-5 py-4', 'text-2xl font-bold')}
     >
       {options.map((option) => (
         <option key={option.value} value={option.value}>

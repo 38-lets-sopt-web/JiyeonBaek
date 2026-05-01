@@ -13,7 +13,7 @@ const RankingTable = ({ records }: RankingTableProps) => {
   return (
     <div className="flex-1 overflow-auto rounded-md bg-white/40">
       <table className="w-full table-fixed border-collapse">
-        <thead className="bg-primary200 text-text sticky top-0 z-10">
+        <thead className="bg-primary200 sticky top-0 z-10">
           <tr>
             {RANKING_TABLE_COLUMNS.map((col) => (
               <th key={col} className="py-4 text-center text-xl font-semibold">

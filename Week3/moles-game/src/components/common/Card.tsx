@@ -31,7 +31,7 @@ const Card = ({
       <p className={cn('text-2xl font-medium', labelColor)}>{label}</p>
 
       <strong
-        className={cn('text-text mt-4 font-bold', valueSize === 'large' ? 'text-6xl' : 'text-2xl')}
+        className={cn('mt-4 font-bold', valueSize === 'large' ? 'text-6xl' : 'text-2xl')}
       >
         {value}
       </strong>

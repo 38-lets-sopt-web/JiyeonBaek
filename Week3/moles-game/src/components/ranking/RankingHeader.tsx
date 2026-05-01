@@ -17,7 +17,7 @@ const RankingHeader = ({ onClear }: RankingHeaderProps) => {
 
   return (
     <div className="flex items-center justify-between">
-      <h2 className="text-text text-3xl font-bold">랭킹 보드</h2>
+      <h2 className="text-3xl font-bold">랭킹 보드</h2>
       <Button onClick={handleClear} bgColor="bg-primary300" textColor="text-white">
         기록 초기화
       </Button>

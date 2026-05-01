@@ -16,7 +16,7 @@ const Header = ({ title, children }: HeaderProps) => {
       )}
     >
       <div className="flex items-center gap-10">
-        <h1 className="text-text text-3xl font-bold">{title}</h1>
+        <h1 className="text-3xl font-bold">{title}</h1>
         {children}
       </div>
     </header>
