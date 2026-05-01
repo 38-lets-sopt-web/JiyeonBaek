@@ -1,17 +1,30 @@
-interface ButtonProps {
-  onClick: () => void;
-  children: React.ReactNode;
-  bgColor: string;
-  textColor: string;
-  className?: string;
+import { cn } from '@/utils/cn';
+import type { ComponentProps } from 'react';
+
+interface ButtonProps extends ComponentProps<'button'> {
+  bgColor?: string;
+  textColor?: string;
 }
 
-const Button = ({ onClick, children, bgColor, textColor, className }: ButtonProps) => {
+const Button = ({
+  children,
+  bgColor = 'bg-primary200',
+  textColor = 'text-text',
+  className,
+  type = 'button',
+  ...props
+}: ButtonProps) => {
   return (
     <button
-      type="button"
-      onClick={onClick}
-      className={`rounded-full px-5 py-2 text-lg transition ${bgColor} ${textColor} ${className}`}
+      type={type}
+      className={cn(
+        'rounded-full px-5 py-2 text-lg transition',
+        bgColor,
+        textColor,
+        'disabled:cursor-not-allowed disabled:opacity-50',
+        className,
+      )}
+      {...props}
     >
       {children}
     </button>
