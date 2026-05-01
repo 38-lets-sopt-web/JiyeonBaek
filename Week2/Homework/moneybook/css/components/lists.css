@@ -1,0 +1,120 @@
+.lists-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.lists-left-tools {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lists-header .bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+#lists-section {
+  margin-top: 2.4rem;
+  width: 100%;
+  background-color: white;
+  padding: 2rem 3rem;
+  color: var(--primary-color);
+  border-radius: var(--border-radius-xl);
+}
+
+#sort-date {
+  min-width: 16rem;
+  height: 4rem;
+  padding: 0 1.2rem;
+  font-size: var(--font-size-sm);
+}
+
+.bulk-actions button {
+  padding: 1rem 1.2rem;
+  font-size: var(--font-size-sm);
+  color: var(--gray-color);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  white-space: nowrap;
+}
+
+.bulk-actions button:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transition: var(--transition-sm);
+}
+
+/* 목록 */
+#lists {
+  background-color: transparent;
+}
+
+#lists table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#lists table th,
+#lists table td {
+  padding: 1rem 1.2rem;
+  border: none;
+  font-size: var(--font-size-sm);
+}
+
+#lists table th {
+  background-color: #f7f9fc;
+  color: var(--text-color);
+  text-align: center;
+}
+
+#lists table td {
+  color: var(--text-color);
+  text-align: center;
+}
+
+#lists table td a {
+  color: var(--surface-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#lists .expense-title {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#lists .expense-title:hover {
+  color: var(--gray-color);
+  transition: var(--transition-sm);
+}
+
+#no-results {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+}
+
+.expense-positive {
+  color: var(--positive-color) !important;
+  font-weight: bold;
+}
+
+.expense-negative {
+  color: var(--negative-color) !important;
+  font-weight: bold;
+}
+
+#lists tfoot .total-row td {
+  background-color: #f7f9fc;
+}

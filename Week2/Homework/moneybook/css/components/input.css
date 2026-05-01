@@ -1,0 +1,46 @@
+input,
+select {
+  border: 1.5px solid var(--secondary-color);
+  border-radius: var(--border-radius-md);
+  padding: 1.2rem;
+  font-size: var(--font-size-md);
+  font-weight: 400;
+}
+
+select {
+  color: var(--gray-color);
+}
+
+input::placeholder {
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  color: var(--gray-color);
+}
+
+input:focus,
+select:focus {
+  border: 1.5px solid var(--primary-color);
+}
+
+/* 라벨 */
+label {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+#search-filter-form label {
+  font-size: var(--font-size-md);
+}
+
+#search-filter-form input,
+#search-filter-form select {
+  font-size: var(--font-size-sm);
+}
+
+#search-filter-form input::placeholder {
+  font-size: var(--font-size-sm);
+}
+
+#add-expense-form .filter-field > label {
+  font-size: var(--font-size-md);
+}
