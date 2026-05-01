@@ -23,3 +23,11 @@ export const HOLE_SIZE_BY_BOARD: Record<2 | 3 | 4, string> = {
 
 export const GAME_TICK_MS = 100;
 export const HIT_FEEDBACK_MS = 700;
+
+export const GAME_MESSAGES = {
+  READY: '게임을 시작하세요.',
+  START: '게임을 시작합니다!',
+  END: '게임이 종료되었습니다.',
+  SUCCESS_MOLE: '성공! 두더지를 맞췄어요.',
+  FAIL_BOMB: '실패! 폭탄을 클릭했어요.',
+} as const;

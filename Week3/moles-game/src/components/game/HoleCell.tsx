@@ -25,8 +25,17 @@ const HoleCell = ({ index, holeType, holeSize, onClick }: HoleCellProps) => {
       );
     }
 
-    if (holeType === 'bomb') {
-      return <img src={bombImage} alt="폭탄" className="h-full w-full object-cover" />;
+    if (holeType === 'bomb' || holeType === 'bomb-hit') {
+      return (
+        <img
+          src={bombImage}
+          alt="폭탄"
+          className={cn(
+            'h-full w-full object-cover',
+            holeType === 'bomb-hit' && 'scale-95 rounded-full ring-4 ring-red-400',
+          )}
+        />
+      );
     }
 
     return null;
