@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Color */
@@ -7,19 +7,19 @@
   --color-primary300: #ff9a86;
   --color-background: #fff0be;
   --color-text: #1e3a5f;
-  --color-white: #ffffff; 
-  
+  --color-white: #ffffff;
+
   /* Font */
-  --font-sans: "Pretendard", system-ui, sans-serif; 
-  
+  --font-sans: 'Pretendard', system-ui, sans-serif;
+
   /* Radius */
   --radius-sm: 1rem;
   --radius-md: 1.4rem;
   --radius-lg: 1.8rem;
   --radius-xl: 2.4rem;
   --radius-full: 9999px;
-  --radius-round: 50%; 
-  
+  --radius-round: 50%;
+
   /* Shadow */
   --shadow-card: 0 0.4rem 1.2rem rgb(0 0 0 / 0.08);
 }
@@ -74,6 +74,13 @@
     background: none;
     cursor: pointer;
     font: inherit;
+    transition:
+      background-color 0.2s ease-in-out,
+      opacity 0.2s ease-in-out;
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   }
 
   input,
