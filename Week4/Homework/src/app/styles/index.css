@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color */
+  --color-primary100: #ffd6a6;
+  --color-primary200: #ffb399;
+  --color-primary300: #ff9a86;
+  --color-background: #fff0be;
+  --color-text: #1e3a5f;
+  --color-white: #ffffff; 
+  
+  /* Font */
+  --font-sans: "Pretendard", system-ui, sans-serif; 
+  
+  /* Radius */
+  --radius-sm: 1rem;
+  --radius-md: 1.4rem;
+  --radius-lg: 1.8rem;
+  --radius-xl: 2.4rem;
+  --radius-full: 9999px;
+  --radius-round: 50%; 
+  
+  /* Shadow */
+  --shadow-card: 0 0.4rem 1.2rem rgb(0 0 0 / 0.08);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    font-size: 1.6rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+    outline: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
