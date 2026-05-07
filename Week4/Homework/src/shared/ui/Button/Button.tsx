@@ -1,7 +1,7 @@
 import { cn } from '@/shared/utils/cn';
 import type { ComponentProps } from 'react';
 
-interface ButtonProps extends ComponentProps<'button'> {}
+type ButtonProps = ComponentProps<'button'>;
 
 const Button = ({ children, className, type = 'button', ...props }: ButtonProps) => {
   return (
