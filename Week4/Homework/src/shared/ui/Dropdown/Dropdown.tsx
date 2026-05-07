@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
-import type { SelectHTMLAttributes } from 'react';
-import type { ReactNode } from 'react';
+import type { SelectHTMLAttributes, ReactNode } from 'react';
 import { cn } from '../../utils/cn';
 
 interface DropdownProps extends SelectHTMLAttributes<HTMLSelectElement> {
