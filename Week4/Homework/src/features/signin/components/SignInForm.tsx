@@ -7,7 +7,7 @@ const SignInForm = () => {
     useSignInForm();
 
   return (
-    <section className="flex min-h-screen items-center justify-center">
+    <section className="flex items-center justify-center">
       <form className="w-full max-w-[460px]" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-4">
           <Input
@@ -25,7 +25,7 @@ const SignInForm = () => {
             {...passwordRegister}
           />
 
-          {loginError && <p className="text-center text-sm text-red-500">{loginError}</p>}
+          {loginError && <p className="text-sm text-red-500">{loginError}</p>}
 
           <Button type="submit" disabled={!isValid}>
             로그인
