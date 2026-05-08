@@ -4,6 +4,7 @@ import { SignupPage, MyPage } from './lazy';
 import SigninPage from '@/pages/Signin/SigninPage';
 import MemberSearch from '@/features/my/components/MemberSearch';
 import MyInfoSearch from '@/features/my/components/MyInfoSearch';
+import MemberDetail from '@/features/my/components/MemberDetail';
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: 'members',
         Component: MemberSearch,
+      },
+      {
+        path: 'members/:memberId',
+        Component: MemberDetail,
       },
     ],
   },

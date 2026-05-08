@@ -19,3 +19,11 @@ export const MEMBERS: Member[] = [
   { id: 9, userId: 'plan01', name: 'const', email: 'plan@sopt.org', age: 25, part: '기획' },
   { id: 10, userId: 'var01', name: 'var', email: 'var@sopt.org', age: 25, part: '웹' },
 ];
+
+export const MEMBER_DETAIL_LABELS = [
+  ['이름', 'name'],
+  ['아이디', 'userId'],
+  ['이메일', 'email'],
+  ['나이', 'age'],
+  ['파트', 'part'],
+] as const;

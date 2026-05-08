@@ -16,7 +16,7 @@ const MemberSearch = () => {
   } = useMemberSearch();
 
   const descriptionStyle = 'text-lg font-medium text-gray-400';
-  const infoValueStyle = 'text-right font-medium text-gray-400';
+  const infoValueStyle = 'text-right font-medium text-primary300';
 
   return (
     <section className="mt-[10rem] flex w-full flex-col items-center gap-20 py-20">
@@ -44,7 +44,7 @@ const MemberSearch = () => {
             )}
 
             {searchedMember && (
-              <dl className="grid w-full grid-cols-[80px_1fr] gap-y-3 text-lg">
+              <dl className="grid w-full grid-cols-[80px_1fr] gap-y-5 text-lg">
                 <dt className="font-bold">아이디</dt>
                 <dd className={infoValueStyle}>{searchedMember.userId}</dd>
                 <dt className="font-bold">이름</dt>
