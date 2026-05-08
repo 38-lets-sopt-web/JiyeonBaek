@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useNavigate } from 'react-router';
+import { postSignUp } from '@/features/signup/api/queries';
+import axios from 'axios';
+import type { ErrorResponse } from '@/shared/api/types';
 
 import {
   SIGN_UP_ERROR_MESSAGE,
   SIGN_UP_STEPS,
   type SignUpStep,
 } from '@/features/signup/constants/signup.constants';
+
 import {
   validateAge,
   validateEmail,
@@ -29,6 +33,7 @@ interface SignUpFormValues {
 const useSignUpForm = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState<SignUpStep>(SIGN_UP_STEPS.ID);
+  const [signUpError, setSignUpError] = useState('');
 
   const {
     register,
@@ -127,15 +132,37 @@ const useSignUpForm = () => {
     }
   };
 
-  const handleSignUpSubmit = (data: SignUpFormValues) => {
-    alert(`${data.name}님 회원가입이 완료되었습니다.`);
-    navigate('/signin');
+  const handleSignUpSubmit = async ({ id, password, name, email, age, part }: SignUpFormValues) => {
+    try {
+      await postSignUp({
+        loginId: id,
+        password,
+        name,
+        email,
+        age: Number(age),
+        part,
+      });
+
+      setSignUpError('');
+      alert(`${name}님 회원가입이 완료되었습니다.`);
+      navigate('/signin');
+    } catch (error) {
+      const errorMessage = axios.isAxiosError<ErrorResponse>(error)
+        ? error.response?.data.message
+        : undefined;
+      const fallbackMessage = '회원가입에 실패했습니다. 입력값을 다시 확인해주세요.';
+      const message = errorMessage ?? fallbackMessage;
+
+      setSignUpError(message);
+      alert(message);
+    }
   };
 
   return {
     step,
     errors,
     isSubmitDisabled,
+    signUpError,
     idRegister,
     passwordRegister,
     passwordConfirmRegister,
