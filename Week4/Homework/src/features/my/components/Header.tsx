@@ -9,7 +9,7 @@ const Header = ({ userName, handleLogout }: HeaderProps) => {
   const navItemStyle = 'transition-colors hover:text-text';
 
   return (
-    <header className="bg-primary300 flex items-center justify-between px-20 py-10 text-white">
+    <header className="bg-primary300 fixed top-0 right-0 left-0 z-10 flex items-center justify-between px-20 py-10 text-white">
       <div className="flex flex-col gap-1">
         <h1 className="text-2xl font-bold">SOPT MEMBERS</h1>
         <p className="text-sm font-medium">안녕하세요, {userName}!</p>
