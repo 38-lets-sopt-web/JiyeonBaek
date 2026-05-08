@@ -1,11 +1,3 @@
-export const MY_INFO = {
-  id: 'assignment',
-  part: '웹',
-  name: '웨비들아하이',
-  email: 'sopt@sopt.org',
-  age: '25',
-};
-
 export const MY_ERROR_MESSAGE = {
   REQUIRED_FIELD: '모든 항목을 입력해주세요.',
   EMAIL_FORMAT: '이메일 형식이 올바르지 않습니다.',

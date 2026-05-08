@@ -1,10 +1,10 @@
-import { MY_INFO } from '@/features/my/constants/my.constants';
 import useSearchForm from '@/features/my/hooks/useSearchForm';
 import Button from '@/shared/ui/Button/Button';
 import Input from '@/shared/ui/Input/Input';
 
 const MyInfoSearch = () => {
   const {
+    myInfo,
     errors,
     isSubmitDisabled,
     nameRegister,
@@ -24,11 +24,11 @@ const MyInfoSearch = () => {
         <section className="flex flex-col gap-4 rounded-2xl bg-white/60 px-5 py-6">
           <div className="flex items-center justify-between text-lg">
             <span className="font-bold">아이디</span>
-            <span className="font-medium text-gray-400">{MY_INFO.id}</span>
+            <span className="font-medium text-gray-400">{myInfo?.loginId}</span>
           </div>
           <div className="flex items-center justify-between text-lg">
             <span className="font-bold">파트</span>
-            <span className="font-medium text-gray-400">{MY_INFO.part}</span>
+            <span className="font-medium text-gray-400">{myInfo?.part}</span>
           </div>
         </section>
 
