@@ -1,10 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
-
-import { MEMBERS } from '@/features/my/constants/member.constants';
-import type { Member } from '@/features/my/types/member.types';
-import { findMemberById } from '@/features/my/utils/memberSearch';
+import { getMembers, getMyInfo } from '@/features/my/api/queries';
+import type { MemberListItem, MyInfoResponseData } from '@/features/my/api/types';
 
 interface MemberSearchFormValues {
   searchId: string;
@@ -12,8 +10,9 @@ interface MemberSearchFormValues {
 
 const useMemberSearch = () => {
   const navigate = useNavigate();
-  const [searchedMember, setSearchedMember] = useState<Member | null>(null);
+  const [searchedMember, setSearchedMember] = useState<MyInfoResponseData | null>(null);
   const [isSearched, setIsSearched] = useState(false);
+  const [members, setMembers] = useState<MemberListItem[]>([]);
 
   const {
     register,
@@ -26,15 +25,33 @@ const useMemberSearch = () => {
     },
   });
 
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await getMembers();
+        setMembers(response.data.users);
+      } catch {
+        alert('회원 목록 조회에 실패했습니다.');
+      }
+    };
+
+    void fetchMembers();
+  }, []);
+
   const searchIdRegister = register('searchId', {
     required: true,
   });
 
-  const handleSearch = ({ searchId }: MemberSearchFormValues) => {
-    const member = findMemberById(MEMBERS, searchId);
+  const handleSearch = async ({ searchId }: MemberSearchFormValues) => {
+    try {
+      const response = await getMyInfo(Number(searchId));
 
-    setSearchedMember(member);
-    setIsSearched(true);
+      setSearchedMember(response.data);
+      setIsSearched(true);
+    } catch {
+      setSearchedMember(null);
+      setIsSearched(true);
+    }
   };
 
   const handleMemberCardClick = (memberId: number) => {
@@ -42,7 +59,7 @@ const useMemberSearch = () => {
   };
 
   return {
-    members: MEMBERS,
+    members,
     searchedMember,
     isSearched,
     isSearchDisabled: !isValid,

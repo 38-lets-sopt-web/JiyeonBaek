@@ -46,7 +46,7 @@ const MemberSearch = () => {
             {searchedMember && (
               <dl className="grid w-full grid-cols-[80px_1fr] gap-y-5 text-lg">
                 <dt className="font-bold">아이디</dt>
-                <dd className={infoValueStyle}>{searchedMember.userId}</dd>
+                <dd className={infoValueStyle}>{searchedMember.loginId}</dd>
                 <dt className="font-bold">이름</dt>
                 <dd className={infoValueStyle}>{searchedMember.name}</dd>
                 <dt className="font-bold">이메일</dt>
