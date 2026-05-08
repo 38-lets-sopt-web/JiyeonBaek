@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+
+import { postSignIn } from '@/features/signin/api/queries';
 
 interface SignInFormValues {
   id: string;
@@ -7,6 +10,7 @@ interface SignInFormValues {
 }
 
 const useSignInForm = () => {
+  const navigate = useNavigate();
   const [loginError, setLoginError] = useState('');
 
   const {
@@ -35,16 +39,19 @@ const useSignInForm = () => {
     onChange: clearLoginError,
   });
 
-  const onSubmit = (data: SignInFormValues) => {
-    const isLoginSuccess = data.id === 'assignment' && data.password === '1234';
+  const onSubmit = async ({ id, password }: SignInFormValues) => {
+    try {
+      const response = await postSignIn({
+        loginId: id,
+        password,
+      });
 
-    if (!isLoginSuccess) {
+      localStorage.setItem('userId', String(response.data.userId));
+      setLoginError('');
+      navigate('/mypage');
+    } catch {
       setLoginError('아이디 또는 비밀번호가 올바르지 않습니다.');
-      return;
     }
-
-    setLoginError('');
-    console.log(data);
   };
 
   return {
