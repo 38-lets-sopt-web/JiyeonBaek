@@ -5,7 +5,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const NUMBER_REGEX = /^\d+$/;
 
 export const validateId = (value: string) => {
-  if (value.length > 20) return SIGN_UP_ERROR_MESSAGE.ID_MAX_LENGTH;
+  if (value.length > 50) return SIGN_UP_ERROR_MESSAGE.ID_MAX_LENGTH;
   return true;
 };
 
