@@ -11,6 +11,7 @@
   --primary-foreground: #ffffff;
   --accent: #d9d6cc;
   --ring: #8d8a80;
+  --shadow-color: rgb(17 17 17 / 0.06);
 }
 
 @theme inline {
