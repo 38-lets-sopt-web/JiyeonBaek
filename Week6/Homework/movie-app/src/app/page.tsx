@@ -1,5 +1,7 @@
-const Home = () => {
-  return null;
+import { MovieExplorer } from "@/features/movie";
+
+const MovieListPage = () => {
+  return <MovieExplorer />;
 };
 
-export default Home;
+export default MovieListPage;

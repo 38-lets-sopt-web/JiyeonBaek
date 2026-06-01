@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib";
 import { Card } from "@/shared";
 
-type MovieCardProps = {
+interface MovieCardProps {
   id: number;
   title: string;
   releaseDate: string;
@@ -12,7 +12,7 @@ type MovieCardProps = {
   posterUrl: string | null;
   className?: string;
   priority?: boolean;
-};
+}
 
 export const MovieCard = ({
   id,
@@ -24,7 +24,11 @@ export const MovieCard = ({
   priority = false,
 }: MovieCardProps) => {
   return (
-    <Link href={`/movies/${id}`} aria-label={`${title} 상세 페이지로 이동`}>
+    <Link
+      href={`/movies/${id}`}
+      prefetch={false}
+      aria-label={`${title} 상세 페이지로 이동`}
+    >
       <Card
         className={cn(
           "w-[240px]",
@@ -40,7 +44,7 @@ export const MovieCard = ({
               alt={`${title} poster`}
               fill
               priority={priority}
-              sizes="(max-width: 768px) 100vw, 240px"
+              sizes="240px"
               className="object-cover"
             />
           ) : (
