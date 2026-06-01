@@ -1,8 +1,8 @@
 import axios, { type AxiosInstance } from "axios";
 
-let client: AxiosInstance | null = null;
+let movieApiClient: AxiosInstance | null = null;
 
-export const getApiClient = () => {
+export const getMovieApiClient = () => {
   const baseURL = process.env.VITE_API_BASE_URL;
   const apiKey = process.env.VITE_API_KEY;
 
@@ -14,7 +14,7 @@ export const getApiClient = () => {
     throw new Error("VITE_API_KEY is not defined.");
   }
 
-  client ??= axios.create({
+  movieApiClient ??= axios.create({
     baseURL,
     headers: {
       accept: "application/json",
@@ -24,5 +24,5 @@ export const getApiClient = () => {
     },
   });
 
-  return client;
+  return movieApiClient;
 };
