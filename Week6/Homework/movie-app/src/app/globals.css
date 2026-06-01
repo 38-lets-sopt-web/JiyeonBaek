@@ -9,7 +9,6 @@
   --muted: #6f6f68;
   --primary: #111111;
   --primary-foreground: #ffffff;
-  --accent: #d9d6cc;
   --ring: #8d8a80;
   --shadow-color: rgb(17 17 17 / 0.06);
 }
@@ -23,10 +22,6 @@
   --color-muted: var(--muted);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-accent: var(--accent);
-  --color-ring: var(--ring);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
 }
 
 *,
@@ -43,32 +38,17 @@ html {
   min-height: 100%;
   background: var(--background);
   color-scheme: light;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
   line-height: 1.5;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
 }
 
 button {
   cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
 }
 
 a {
@@ -76,11 +56,7 @@ a {
   text-decoration: none;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
+img {
   display: block;
   max-width: 100%;
 }
